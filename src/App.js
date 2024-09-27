@@ -33,13 +33,13 @@ function App() {
       setMode('dark');
       document.body.style.backgroundColor = '#202020';
       showAlert('Dark mode has been set successfully',"success");
-      document.title = "TextUtils - Dark Mode";
+      // document.title = "TextUtils - Dark Mode";
     }
     else {
       setMode('light');
       document.body.style.backgroundColor = 'white';
       showAlert('Light mode has been set successfully',"success");
-      document.title = "TextUtils - Light Mode";
+      // document.title = "TextUtils - Light Mode";
     }
   }
   return (
@@ -49,8 +49,8 @@ function App() {
         <Alert alert = {alert}/>
         <div className="container my-3">
           <Routes>
-            <Route path='/' element={<TextForm showAlert={showAlert} heading="Enter the text here to analyze below" mode={mode}/>}/>
-            <Route path='/About' element={<About />}/>
+            <Route path='/' element={<TextForm showAlert={showAlert} heading="Try TextUtils - Word Counter | Character Counter | Remove extra spaces" mode={mode}/>}/>
+            <Route path='/About' element={<About mode={mode}/>}/>
           </Routes>
         </div>
       </Router>

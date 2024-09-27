@@ -1,31 +1,18 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Link} from 'react-router-dom';
 
-export default function About() {
+export default function About(props) {
 
-    const [myStyle,setMyStyle] = useState({
-        color: 'white',
-        backgroundColor: 'black'
-    })
+    // const [myStyle,setMyStyle] = useState({
+    //     color: 'black',
+    //     backgroundColor: 'white'
+    // })
 
-    const [btnText, setBtnText] = useState("Enable Dark Mode");
-
-    const toggleStyle = ()=>{
-        if(myStyle.backgroundColor==='white') {
-            setMyStyle({
-                color: 'white',
-                backgroundColor: 'black'
-            })
-            setBtnText('Enable Light Mode');
-        }
-        else {
-            setMyStyle({
-                color: 'black',
-                backgroundColor: 'white'
-            })
-            setBtnText('Enable Dark Mode');
-        }
+    let myStyle = {
+        color: props.mode==='dark'?'white':'black',
+        backgroundColor : props.mode==='dark'?'#202020':'white'
     }
+
 
   return (
     <div className='container' style={myStyle}>
@@ -58,9 +45,9 @@ export default function About() {
                 </div>
             </div>
         </div>
-        <div className="container">
+        {/* <div className="container">
             <button type="button" onClick={toggleStyle} className="btn btn-primary my-3">{btnText}</button>
-        </div>
+        </div> */}
     </div>
   )
 }
